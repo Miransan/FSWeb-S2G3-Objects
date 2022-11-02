@@ -15,12 +15,19 @@ const serpmeKahvalti = {isim: "Serpme Kahvaltı", fiyat: 16, kategori:"Kahvaltı
 */
 
 
-function MenuElemaniOlustur(/*Kodlar buraya*/){
-	/*Kodlar buraya*/
+function MenuElemaniOlustur(isim , fiyat, kategori){
+	const obje= {
+		'isim':isim,
+		'fiyat':fiyat,
+		'kategori':kategori,
+	};
+	return obje;	
 }
+console.log(MenuElemaniOlustur('Cheeseburger', 8, 'Burgerler'));
 
 
 
+ 
 /*  Görev 1b (otomatik test yok): 
 	Fonksiyonu çağırın!
 	Aşağıdakileri uygulayarak MenuElemaniOlustur fonksiyonunuzu test edin:
@@ -30,6 +37,10 @@ function MenuElemaniOlustur(/*Kodlar buraya*/){
 	
 	Örnek: MenuElemaniOlustur("Karışık Pizza",5,"Pizzalar") şunu döndürür: {isim:"Karışık Pizza",fiyat:5,kategori:"Pizzalar"}
 */
+	console.log(MenuElemaniOlustur("Karışık Pizza",5,"Pizzalar")),
+	console.log(MenuElemaniOlustur("Jambonlu Pizza",10,"Pizzalar"));
+	console.log(MenuElemaniOlustur("Sosisli Pizza",10,"Pizzalar"));
+	
 
 
 
@@ -47,9 +58,23 @@ function MenuElemaniOlustur(/*Kodlar buraya*/){
 
 
 const burger = {
-	isim: "Burger", 
-	fiyat: 18, 
-	kategori: "Öğle Yemeği", 
+		isim: "Burger", 
+		fiyat: 18, 
+		kategori: "Öğle Yemeği",
+		indirim: function (kisilereGore){
+			if (kisilereGore === 'ogrenci' || 'ogretmen'){
+			return this.fiyat * 0.75;
+		}
+			else if (digerherkes === 'diger'){
+				return this.fiyat * 0.90;
+			}
+			
+		
+	
+	
+		console.log (burger('ogrenci'));
+		console.log (burger('digerherkes'));
+		 
 
 }
 
